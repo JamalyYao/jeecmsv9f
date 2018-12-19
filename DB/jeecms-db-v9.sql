@@ -372,9 +372,9 @@ CREATE TABLE `jc_api_user_login` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `session_key` varchar(100) DEFAULT '' COMMENT 'sesssionKey',
   `username` varchar(255) NOT NULL DEFAULT '' COMMENT '用户名',
-  `login_time` timestamp NOT NULL  ON UPDATE CURRENT_TIMESTAMP COMMENT '登陆时间',
+  `login_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '登陆时间',
   `login_count` int(11) NOT NULL DEFAULT '0' COMMENT '登陆次数',
-  `active_time` timestamp NOT NULL  COMMENT '最后活跃时间',
+  `active_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT '最后活跃时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='API用户登录表';
 
